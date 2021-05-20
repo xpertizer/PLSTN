@@ -13,7 +13,7 @@ namespace Employees.API.Data
                 ("DatabaseSettings:ConnectionString"));
 
             var database = employee.GetDatabase(configuration.GetValue<string>
-                ("DatabaseSetting:DatabaseName"));
+                ("DatabaseSettings:DatabaseName"));
 
             Employees = database.GetCollection<Employee>(configuration.GetValue<string>
                 ("DatabaseSettings:CollectionName"));

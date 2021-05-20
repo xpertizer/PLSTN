@@ -38,7 +38,7 @@ namespace Employees.API.Controllers
             }
             return Ok(employee);
         }
-        [Route("[action]/{category}", Name = "GetEmployeeByArea")]
+        [Route("[action]/{area}", Name = "GetEmployeeByArea")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Employee>>> GetEmployeeByArea(string area)
         {
@@ -59,7 +59,7 @@ namespace Employees.API.Controllers
 
             return CreatedAtRoute("GetEmployee", new { matricula = employee.Matricula }, employee);
         }
-
+        [Route("[action]", Name ="ProfitSharing")]
         [HttpPost]
         public async Task<ActionResult<ProfitSharingResponse>> ProfitSharing([FromBody] ProfitSharingRequest request)
         {

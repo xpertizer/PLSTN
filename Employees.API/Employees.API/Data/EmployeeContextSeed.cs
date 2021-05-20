@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 using Employees.API.Entities;
 using MongoDB.Driver;
+using Newtonsoft.Json;
 
 namespace Employees.API.Data
 {
     public class EmployeeContextSeed
     {
-        public EmployeeContextSeed()
-        {
-        }
+        
         public static void SeedData(IMongoCollection<Employee> employeeCollection)
         {
             bool existEmployee = employeeCollection.Find(p => true).Any();
@@ -23,18 +24,27 @@ namespace Employees.API.Data
 
         private static IEnumerable<Employee> GetMyEmployees()
         {
-            return new List<Employee>
+            string fileName = "banco2.json";
+            string jsonString = File.ReadAllText(fileName);
+            CargaInicial cargaInicial = JsonConvert.DeserializeObject<CargaInicial>(jsonString);// JsonConverter<CargaInicial>(jsonString);// JsonSerializer.Deserialize<Object>(jsonString);
+            List<Employee> employees = new List<Employee>();
+
+            foreach (var f in cargaInicial.Funcionarios)
             {
-                new Employee()
-                {
-                    Matricula = "11111",
-                    Nome = "Leonardo",
-                    Area = "Tesouraria",
-                    Cargo = "Analista",
-                    SalarioBruto = 1000000,
-                    DataAdmissao = Convert.ToDateTime("01/01/2021")
-                }
-            };
+                Employee emp = new Employee();
+                emp.Matricula = f.Matricula;
+                emp.Nome = f.Nome;
+                emp.Cargo = f.Cargo;
+                emp.Area = f.Area;
+                emp.DataAdmissao = Convert.ToDateTime(f.DataAdmissao.Split("-")[2]
+                    + "/" + f.DataAdmissao.Split("-")[1]
+                    + "/" + f.DataAdmissao.Split("-")[0]);
+                emp.SalarioBruto = Convert.ToDecimal(f.SalarioBruto);
+                employees.Add(emp);
+
+            }
+            return employees;
+            
         }
     }
 }
