@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Employees.API.Entities;
 
 namespace Employees.API.Repository
@@ -6,13 +8,16 @@ namespace Employees.API.Repository
     public class ProfitSharingRules
     {
         private Employee _employee;
-        private Decimal _salarioMinimo;
-        public ProfitSharingRules(Employee employee, Decimal salariominimo)
+        private Double _salarioMinimo;
+        public ProfitSharingRules(Employee employee, double salariominimo)
         {
             _employee = employee;
             _salarioMinimo = salariominimo;
         }
+        public ProfitSharingRules()
+        {
 
+        }
         public int PesoAreaAtuacao()
         {
             int paa = 1;
@@ -50,7 +55,7 @@ namespace Employees.API.Repository
         public int PesoFaixaSalarial()
         {
             int pfs = 1;
-            decimal SalarioBrutoemSalariosMinimos = _employee.SalarioBruto / _salarioMinimo;
+            double SalarioBrutoemSalariosMinimos = _employee.SalarioBruto / _salarioMinimo;
             if (SalarioBrutoemSalariosMinimos>8)
             {
                 pfs = 5;
@@ -96,18 +101,52 @@ namespace Employees.API.Repository
 
         }
 
-        public Decimal ValorDaParticipacao()
+        public Double ValorDaParticipacao()
         {
 
-            decimal resultadoFormula;
+            Double resultadoFormula;
 
 
 
             resultadoFormula = _employee.SalarioBruto * this.PesoPorTempoDeAdmissao();
             resultadoFormula += _employee.SalarioBruto * this.PesoAreaAtuacao();
-            resultadoFormula = ((resultadoFormula) / this.PesoFaixaSalarial()) * 12;
+            resultadoFormula = (((resultadoFormula) / this.PesoFaixaSalarial()) * 12);
+            decimal d = decimal.Round(Convert.ToDecimal(resultadoFormula), 2, MidpointRounding.AwayFromZero);
+            return Convert.ToDouble(d);
 
-            return resultadoFormula;
+        }
+
+        public ProfitSharingResponse
+                ProfitSharingReport(ProfitSharingRequest request,
+                                    List<Employee> employees
+                                    )
+        {
+            ProfitSharingResponse response = new ProfitSharingResponse();
+            response.TotalDisponibilizado = request.ValorMaximoADistribuir;
+            response.TotalDistribuido = 0;
+            response.TotalFuncionarios = employees.Count();
+            Double _salmin = request.SalarioMinimoAtual;
+            List<Participacao> participacoes = new List<Participacao>();
+            Double _totalDistribuido = 0;
+
+            foreach (var c in employees)
+            {
+                Participacao participacao = new Participacao();
+                ProfitSharingRules pfsr = new ProfitSharingRules(c, _salmin);
+                participacao.Matricula = c.Matricula;
+                participacao.Nome = c.Nome;
+                participacao.ValorDaParticipacao = pfsr.ValorDaParticipacao();
+                _totalDistribuido += participacao.ValorDaParticipacao;
+                participacoes.Add(participacao);
+            }
+            response.Participacoes = participacoes;
+            response.TotalDistribuido = _totalDistribuido;
+            response.SaldoTotalDisponibilizado = request.ValorMaximoADistribuir - _totalDistribuido;
+            return response;
+
+
+
+
 
         }
     }

@@ -28,7 +28,7 @@ namespace Employees.API.Entities
         public string Cargo { get; set; }
 
         [BsonElement("salario_bruto")]
-        public decimal SalarioBruto { get; set; }
+        public double SalarioBruto { get; set; }
 
         [BsonElement("data_de_admissao")]
         public DateTime DataAdmissao { get; set; }

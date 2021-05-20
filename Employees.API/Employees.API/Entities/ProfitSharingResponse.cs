@@ -10,9 +10,9 @@ namespace Employees.API.Entities
         }
 
         public List<Participacao> Participacoes { get; set; }
-        public Decimal TotalFuncionarios { get; set; }
-        public Decimal TotalDistribuido { get; set; }
-        public Decimal TotalDisponibilizado { get; set; }
-        public Decimal SaldoTotalDisponibilizado { get; set; }
+        public Double TotalFuncionarios { get; set; }
+        public Double TotalDistribuido { get; set; }
+        public Double TotalDisponibilizado { get; set; }
+        public Double SaldoTotalDisponibilizado { get; set; }
     }
 }

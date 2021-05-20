@@ -22,7 +22,7 @@ namespace Employees.API.Data
             }
         }
 
-        private static IEnumerable<Employee> GetMyEmployees()
+        public static IEnumerable<Employee> GetMyEmployees()
         {
             string fileName = "banco2.json";
             string jsonString = File.ReadAllText(fileName);
@@ -39,7 +39,7 @@ namespace Employees.API.Data
                 emp.DataAdmissao = Convert.ToDateTime(f.DataAdmissao.Split("-")[2]
                     + "/" + f.DataAdmissao.Split("-")[1]
                     + "/" + f.DataAdmissao.Split("-")[0]);
-                emp.SalarioBruto = Convert.ToDecimal(f.SalarioBruto);
+                emp.SalarioBruto = Convert.ToDouble(f.SalarioBruto);
                 employees.Add(emp);
 
             }
