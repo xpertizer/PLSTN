@@ -1,0 +1,167 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/taislopes/git/PLSTN/PLSTN.Test/PLSTN.Test.csproj": {}
+  },
+  "projects": {
+    "/Users/taislopes/git/PLSTN/Employees.API/Employees.API/Employees.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/taislopes/git/PLSTN/Employees.API/Employees.API/Employees.API.csproj",
+        "projectName": "Employees.API",
+        "projectPath": "/Users/taislopes/git/PLSTN/Employees.API/Employees.API/Employees.API.csproj",
+        "packagesPath": "/Users/taislopes/.nuget/packages/",
+        "outputPath": "/Users/taislopes/git/PLSTN/Employees.API/Employees.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/taislopes/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.12.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/taislopes/git/PLSTN/PLSTN.Test/PLSTN.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/taislopes/git/PLSTN/PLSTN.Test/PLSTN.Test.csproj",
+        "projectName": "PLSTN.Test",
+        "projectPath": "/Users/taislopes/git/PLSTN/PLSTN.Test/PLSTN.Test.csproj",
+        "packagesPath": "/Users/taislopes/.nuget/packages/",
+        "outputPath": "/Users/taislopes/git/PLSTN/PLSTN.Test/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/taislopes/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/Users/taislopes/git/PLSTN/Employees.API/Employees.API/Employees.API.csproj": {
+                "projectPath": "/Users/taislopes/git/PLSTN/Employees.API/Employees.API/Employees.API.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[5.10.3, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.12.3, )"
+            },
+            "MongoDB.Driver.Core": {
+              "target": "Package",
+              "version": "[2.12.3, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.203/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

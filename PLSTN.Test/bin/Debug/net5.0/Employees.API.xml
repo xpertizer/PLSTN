@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Employees.API</name>
+    </assembly>
+    <members>
+        <member name="M:Employees.API.Controllers.EmployeesController.GetEmployees">
+            <summary>
+            Get Employee List.
+            If Employees Collection in MongoDB was empty, this method load a banco2.json file and include automatically in Employees Collection
+            </summary>
+            <returns>A employee List</returns>
+            <response code="200">Request Succesfully</response>
+        </member>
+        <member name="M:Employees.API.Controllers.EmployeesController.GetEmployeeByMatricula(System.String)">
+            <summary>
+            Get Employee List Filtered by Matricula.
+            </summary>
+            /// <returns>A employee List filtered by matricula field</returns>
+            <response code="200">Request OK</response>
+            <response code="404">Matricula Not Found</response>
+        </member>
+        <member name="M:Employees.API.Controllers.EmployeesController.GetEmployeeByArea(System.String)">
+            <summary>
+            Get Employee List Filtered by Area.
+            </summary>
+            <returns>A employee List filtered by Area field</returns>
+            <response code="200">Request OK</response>
+            <response code="404">Invalid Area</response>
+            [Route("[action]/{area}", Name = "GetEmployeeByArea")]
+        </member>
+        <member name="M:Employees.API.Controllers.EmployeesController.CreateEmployee(Employees.API.Entities.Employee)">
+             <summary>
+             Creates a Employee.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /Employee
+                 {
+                      "matricula": "0004468",
+                      "nome": "JohnDoe Gates",
+                      "area": "Accounting",
+                      "cargo": "Analyst",
+                      "salario_bruto": "3.245,52",
+                      "data_de_admissao": "2010-10-07"
+                 }
+            
+             </remarks>
+             <param name="employee"></param>
+             <returns>A newly created Employee</returns>
+             <response code="201">Returns the newly created employee</response>
+             <response code="400">Invalid Employee</response>      
+        </member>
+        <member name="M:Employees.API.Controllers.EmployeesController.ProfitSharing(Employees.API.Entities.ProfitSharingRequest)">
+             <summary>
+             Creates a Profit Sharing Report.
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 POST /ProfitSharingRequest
+                 {
+                      "ValorMaximoADistribuir": 10000000,
+                      "SalarioMinimoAtual": 900
+                 }
+            
+             </remarks>
+             <param name="ValorMaximoADistribuir">Value to be shared with emplyees</param>
+             <param name="SalarioMinimoAtual">Value of minimal wage to be used in calculation</param>
+             <returns>A report in Json ProfitSharingResponse</returns>
+             <response code="201">Returns Json with all employee Profit and summaries in the end</response>
+             <response code="400">Invalid Request</response>
+        </member>
+    </members>
+</doc>

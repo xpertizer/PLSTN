@@ -1,0 +1,51 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{AFD52D8A-FCDD-47AD-AB4C-9CEF37455733}|Default">
+  <MonoDevelop.Ide.ItemProperties.Employees.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="PLSTN.Test/UnitTest1.cs" Line="43" Column="1" />
+      <File FileName="Employees.API/Employees.API/banco2.json" Line="18" Column="6" />
+      <File FileName="Employees.API/Employees.API/Repository/ProfitSharingRules.cs" Line="115" Column="40" />
+      <File FileName="Employees.API/Employees.API/Repository/EmployeeRepository.cs" Line="100" Column="69" />
+      <File FileName="Employees.API/Employees.API/Data/EmployeeContextSeed.cs" Line="42" Column="52" />
+      <File FileName="Employees.API/Employees.API/Data/EmployeeContext.cs" Line="10" Column="61" />
+      <File FileName="Employees.API/Employees.API/Entities/Employee.cs" Line="7" Column="18" />
+      <File FileName="Employees.API/Employees.API/Repository/IEmployeeRepository.cs" Line="1" Column="1" />
+      <File FileName="Employees.API/Employees.API/Controllers/EmployeesController.cs" Line="16" Column="18" />
+      <File FileName="Employees.API/Employees.API/Data/IEmployeeContext.cs" Line="1" Column="1" />
+      <File FileName="Employees.API/Employees.API/Startup.cs" Line="53" Column="67" />
+      <File FileName="Employees.API/Employees.API/Program.cs" Line="1" Column="1" />
+      <File FileName="Employees.API/Employees.API/Entities/Participacao.cs" Line="14" Column="2" />
+      <File FileName="Employees.API/Employees.API/Entities/ProfitSharingRequest.cs" Line="26" Column="22" />
+      <File FileName="Employees.API/Employees.API/Entities/ProfitSharingResponse.cs" Line="8" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="PLSTN" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="PLSTN" expanded="True" selected="True">
+            <Node name="PLSTN.Test" expanded="True">
+              <Node name="PLSTN.Test" expanded="True">
+                <Node name="UnitTest1" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/taislopes/git/PLSTN/PLSTN.Test/UnitTest1.cs" relfile="PLSTN.Test/UnitTest1.cs" line="39" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

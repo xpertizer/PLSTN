@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/taislopes/.dotnet/store/|arch|/|tfm|",
+      "/Users/taislopes/.nuget/packages"
+    ]
+  }
+}
